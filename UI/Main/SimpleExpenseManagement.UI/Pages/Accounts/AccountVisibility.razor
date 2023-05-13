@@ -1,0 +1,13 @@
+﻿@page "/AccountVisibility"
+@using SimpleExpenseManagement.UI.Models.Accounts
+
+@using SimpleExpenseManagement.UI.Resources.Account;
+@inject IStringLocalizer<AccountResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="AccountVisibilityDto" TSelectItem="AccountVisibilitySelectDto"  Resource="Localizer" FormName="AccountVisibility" ></CrudComponent>
+
+
+

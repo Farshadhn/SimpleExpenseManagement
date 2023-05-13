@@ -1,0 +1,13 @@
+﻿@page "/User"
+@using SimpleExpenseManagement.UI.Models.Users
+
+@using SimpleExpenseManagement.UI.Resources.User;
+@inject IStringLocalizer<UserResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="UserDto" TSelectItem="UserSelectDto"  Resource="Localizer" FormName="User" ></CrudComponent>
+
+
+

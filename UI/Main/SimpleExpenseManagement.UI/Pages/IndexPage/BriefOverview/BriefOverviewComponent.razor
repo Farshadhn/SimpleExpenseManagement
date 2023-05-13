@@ -1,0 +1,11 @@
+﻿@namespace SimpleExpenseManagement.UI.Pages.IndexPage.BriefOverview
+<div class="row">
+
+    @foreach (var Item in BreifOver)
+    {
+        <BriefComponent BreifName="@Item" />
+    }
+</div>
+@code {
+    public List<string> BreifOver = new List<string> { "پول امروز", "کاربران امروز", "کاربر جدید", "فروش" };
+         }

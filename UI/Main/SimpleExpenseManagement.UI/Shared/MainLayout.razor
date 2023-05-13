@@ -1,0 +1,120 @@
+﻿@inherits LayoutComponentBase
+@using Blazored.LocalStorage
+@using SimpleExpenseManagement.UI.Pages.IndexPage.BriefOverview;
+@using SimpleExpenseManagement.UI.Pages.IndexPage.Body;
+
+
+@using Blazored.Toast
+@using Blazored.Toast.Configuration
+@using Blazored.Toast.Services
+
+
+<PageTitle>SimpleExpenseManagement.UI</PageTitle>
+
+
+<div class="page PF m-4" style="height:100vh;" dir="rtl">
+
+
+    
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg overflow-x-hidden d-flex  flex-row">
+        <div class="d-flex col-lg-2 SideBarContainer">
+            <NavMenu />
+        </div>
+        
+        <style>
+
+
+           
+
+
+
+
+            .classinfo {
+                background-image: linear-gradient(310deg, #800080 5%, #FF1493 95%);
+                color: white;
+                box-shadow: 2px 3px 5px grey;
+            }
+
+
+            .catchbtn {
+                width: 120px;
+                margin-right: 1110px;
+                background-color: pink;
+                color: dimgrey;
+            }
+
+            .AddClearpositon {
+                margin-top: 30px;
+            }
+        </style>
+
+
+        <div class="d-flex flex-column col-lg-10">
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 px-0" id="navbar">
+                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                    <div class="input-group">
+                        @*  <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>   *@
+                        <input type="text" class="form-control" placeholder="اینجا بنویس...">
+                    </div>
+                </div>
+                <ul class="navbar-nav me-auto ms-0 justify-content-end">
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="btn btn-outline-primary btn-sm mb-0 ms-3" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard"> سازنده آنلاین</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                            <i class="fa fa-user me-sm-1"></i>
+                            <span class="d-sm-inline d-none">ورود</span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-xl-none pe-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0">
+                            <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ps-2 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-bell cursor-pointer"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+      
+
+        <div class=" IranSans  container-fluid py-4 mx-1 MainContent">
+            @Body
+
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
+@code {
+    [Inject] NavigationManager NavManager { get; set; }
+    [Inject] ILocalStorageService _localStorage { get; set; }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+        var token = await _localStorage.GetItemAsync<string>
+            ("authToken");
+
+        if (token == default)
+        { NavManager.NavigateTo("/login"); return; }
+    }
+
+}
+

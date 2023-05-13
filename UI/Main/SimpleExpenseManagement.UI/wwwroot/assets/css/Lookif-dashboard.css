@@ -1,0 +1,159 @@
+﻿.navbar-vertical.navbar-expand-xs .navbar-collapse {
+    display: block;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'IRAN_Sans_Regular';
+    src: url('/assets/Fonts/IRAN_Sans_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'IranSansBold';
+    src: url('/assets/Fonts/IRAN_Sans_Bold.ttf');
+}
+
+.PF {
+    font-family: var(--font-family-regular);
+}
+
+.PF-Bold {
+    font-family: var(--font-family-bold);
+    font-weight: bolder;
+}
+
+
+.MainContent {
+    direction: rtl;
+    border-radius: var(--border-radius)
+}
+
+
+
+
+.PatialContent {
+    background-color: var(--content-bg-color); 
+    border-radius: var(--partial-content-border-radius);
+}
+
+.PatialContentTitle {
+    font-size: var(--font-size-medium);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0.625rem;
+    height: 3.5rem;
+    border-bottom: var(--partial-content-border-bottom);
+    margin-bottom: 9px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.PatialContentInsertNew {
+    color:var(--insert-new-color);
+    padding-left:15px;
+}
+
+.PatialContentInsertNew:hover {
+   cursor:pointer;
+}
+.PatialContentInsertNew i {
+    vertical-align: middle;
+}
+
+
+
+
+
+/*.PatialContentTitle::after {
+    content: "";
+    background-color: #d2d2d2;
+    width: 120px;
+    height: 1px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+}
+*/
+
+
+
+/* Links */
+    a {
+    letter-spacing: -0.025rem;
+    color: #344767;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+/* End of Links */
+
+
+
+/* Table */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-striped-color);
+}
+/* End of Table */
+
+
+/* ءModal */
+
+button.bm-close {
+    margin:0px !important;
+}
+div.bm-header {
+    flex-direction: row-reverse !important;
+}
+/* End of Modal*/
+/* SideBar */
+.Sidebar {
+    text-align: center;
+    width: 100%;
+}
+
+.SidebarTitle {
+    font-size: var(--font-size-big);
+}
+
+.SidebarUsername {
+    font-size: var(--font-size-medium);
+}
+
+.SidebarMenu {
+    list-style: none;
+}
+
+.SidebarMenuItem {
+    font-size: var(--font-size-small);
+}
+
+    .SidebarMenuItem:hover {
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 10px;
+        color: #2EAEDB !important;
+        box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    }
+
+.SidebarMenuItemSelected {
+    font-size: var(--font-size-medium);
+}
+
+.SidebarMenuItem i {
+    padding-left: 5px;
+}
+/* End of SideBar */

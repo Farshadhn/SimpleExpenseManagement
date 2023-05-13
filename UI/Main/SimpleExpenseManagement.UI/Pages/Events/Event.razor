@@ -1,0 +1,12 @@
+﻿@page "/Event"
+@using SimpleExpenseManagement.UI.Models.Events
+@using SimpleExpenseManagement.UI.Resources.Event;
+@inject IStringLocalizer<EventResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="EventDto" TSelectItem="EventSelectDto"  Resource="Localizer" FormName="Event" ></CrudComponent>
+
+
+

@@ -1,0 +1,13 @@
+﻿@page "/LoanMaster"
+@using SimpleExpenseManagement.UI.Models.Loans.LoanMasters
+
+@using SimpleExpenseManagement.UI.Resources.LoanMaster;
+@inject IStringLocalizer<LoanMasterResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="LoanMasterDto" TSelectItem="LoanMasterSelectDto"  Resource="Localizer" FormName="وام ها" ></CrudComponent>
+
+
+

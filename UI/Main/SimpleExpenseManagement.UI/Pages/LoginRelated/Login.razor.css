@@ -1,0 +1,37 @@
+﻿.LoginInputIcon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-right: 0;
+    height: 100%;
+    width:20px;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.LoginInput  {
+    position: relative; 
+}
+.Title {
+    text-align: center;
+    color: black;
+    font-size: 23px;
+}
+.Login {
+    align-self: center;
+    width: 30vw;
+    height: 35vh;
+}
+.LoginImage {
+    align-self: center;
+    width: 50vw;
+    height: 35vh;
+}
+.LoginForm {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.LoginSubmit {
+    background-color: #28c0ef;
+    color: white;
+    font-size: medium;
+    margin-top: 2vh;
+}

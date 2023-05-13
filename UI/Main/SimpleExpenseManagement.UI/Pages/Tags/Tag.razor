@@ -1,0 +1,13 @@
+﻿@page "/Tag"
+@using SimpleExpenseManagement.UI.Models.Tags
+
+@using SimpleExpenseManagement.UI.Resources.Tag;
+@inject IStringLocalizer<TagResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="TagDto" TSelectItem="TagSelectDto"  Resource="Localizer" FormName="Tag" ></CrudComponent>
+
+
+

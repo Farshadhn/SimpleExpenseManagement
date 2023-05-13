@@ -1,0 +1,14 @@
+﻿@page "/Account"
+
+@using SimpleExpenseManagement.UI.Models.Accounts
+
+@using SimpleExpenseManagement.UI.Resources.Account;
+@inject IStringLocalizer<AccountResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="AccountDto" TSelectItem="AccountSelectDto"  Resource="Localizer" FormName="حساب ها" ></CrudComponent>
+
+
+

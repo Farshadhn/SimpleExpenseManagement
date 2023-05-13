@@ -1,0 +1,44 @@
+﻿:root {
+    --main-bg-color: #F8F9FA;
+    --content-bg-color: #FFF;
+    --header-bg-color: #FFF;
+    --insert-new-color:green;
+
+
+    /*font related*/
+    --font-size-verybig: 48px;
+    --font-size-big: 32px;
+    --font-size-medium: 24px;
+    --font-size-small: 18px;
+    --font-family-regular: IRAN_Sans_Regular;
+    --font-family-bold: IranSansBold;
+    /*End of font related*/
+
+
+    --link-color: #344767;
+    --link-hover-color: #830866;
+    /* Table */
+    --table-striped-color: rgba(0, 0, 0, 0.03);
+    /* End of Table */
+
+
+
+    /* ءModal */
+     
+
+
+
+    /* End of Modal*/
+
+
+
+    /* Form*/
+
+    --input-height:30px;
+
+    /* End of Form*/
+
+    --border-radius: 5px;
+    --partial-content-border-radius: 10px;
+    --partial-content-border-bottom: 2px solid #d3d4d6
+}

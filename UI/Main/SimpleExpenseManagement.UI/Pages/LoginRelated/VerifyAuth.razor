@@ -1,0 +1,18 @@
+﻿
+<h3>verifyAuth</h3>
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; }
+
+    private bool IsAuthenticated { get; set; } = false;
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthState;
+        if (authState.User.Identity.IsAuthenticated)
+        {
+            IsAuthenticated = true;
+        } 
+    }
+
+}

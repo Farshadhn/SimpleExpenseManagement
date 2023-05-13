@@ -1,0 +1,14 @@
+﻿@page "/Operation"
+@using SimpleExpenseManagement.UI.Models.Operations
+
+@using SimpleExpenseManagement.UI.Resources.Operation;
+@inject IStringLocalizer<OperationResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="OperationDto" TSelectItem="OperationSelectDto"  Resource="Localizer" FormName="Operation" ></CrudComponent>
+
+
+
+

@@ -1,0 +1,61 @@
+﻿@inject NavigationManager _NavigationManager
+@using SimpleExpenseManagement.UI.Resources.MenuTitle;
+@inject IStringLocalizer<MenuTitleResource> Localizer
+
+
+<aside class="Sidebar">
+    <div class="SidebarTitle mb-4">
+        <a href="" target="_blank">
+            <span>کیف پول لوکیف</span>
+        </a>
+    </div> 
+    <hr class="horizontal dark mt-2 mb-2">
+
+    <div class="SidebarUsername">
+        <a href="" target="_blank">
+            <span>داشبورد فرشاد</span>
+        </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div  >
+        <ul class="SidebarMenu">
+            @foreach (var _menu in listOfMainMenues)
+            {
+                <li class="SidebarMenuItem mb-4">
+                    <a class="d-block" @onclick="()=>Navigate(_menu.address)">
+                        <i class="@_menu.image ml-1"></i>
+                        <span class="mr-1" > @Localizer[_menu.address]  </span>
+                    </a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</aside>
+
+
+@code
+{
+
+    public List<(string address, string image)> listOfMainMenues =
+    new List<(string address, string image)> {
+        ("Home","fa fa-home"),
+        ("Event","fa fa-calendar-alt"),
+        ("Investment","fa fa-piggy-bank"),
+        ("LoanMaster","fa fa-money-check-alt"),
+        ("LoanDetail","fa fa-money-check-alt"),
+        ("Unit","fa fa-dollar-sign"),
+        ("Tag","fa fa-tags"),
+        ("Operation","fa fa-credit-card"),
+        ("Account","fa fa-file-invoice-dollar"),
+        ("AccountVisibility","fa fa-eye-slash"),
+        ("User","fa fa-user")
+    };
+
+    public async Task Navigate(string MenuName)
+    {
+        _NavigationManager.NavigateTo($"/{MenuName}");
+
+    }
+
+}

@@ -1,0 +1,13 @@
+﻿@page "/Unit"
+@using SimpleExpenseManagement.UI.Models.Units
+
+@using SimpleExpenseManagement.UI.Resources.Unit;
+@inject IStringLocalizer<UnitResource>  Localizer
+
+
+
+
+<CrudComponent  TItem="UnitDto" TSelectItem="UnitSelectDto"  Resource="Localizer" FormName="Unit" ></CrudComponent>
+
+
+
