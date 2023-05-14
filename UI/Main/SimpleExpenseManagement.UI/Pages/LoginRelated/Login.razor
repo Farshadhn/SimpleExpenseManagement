@@ -13,7 +13,7 @@
 
 
 
-<div class="IranSansBold d-flex flex-row" style=" height: 100vh; width: 100vw;direction:rtl">
+<div class="IranSansBold IranSans d-flex flex-row" style=" height: 100vh; width: 100vw;direction:rtl">
 
     <div class="d-flex Login flex-column pl-4">
        <div class="d-flex Login flex-column bg-white shadow-sm rounded">
@@ -25,7 +25,7 @@
         <EditForm Model=_model OnValidSubmit="ExecuteLogin" class="validate-form LoginForm">
             @if (ShowAuthenticationError)
             {
-                <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger" role="alert" style="text-align: center;height: 50px;">
                     <p>@authenticationErrorText</p>
                 </div>
             }
@@ -35,8 +35,7 @@
                     <InputText class="form-control  " placeholder="@Localizer["Username"]"
                                aria-label="Username" aria-describedby="basic-addon1" @bind-Value="_model.UserName" />
                     <span class="MyRightFont LoginInputIcon"><i class="fa fa-user icon"></i></span>
-
-                    <ValidationMessage For="@(()=>_model.UserName)" />
+                     
                 </div>
             </div>
             <div class="LoginForm">
@@ -44,7 +43,7 @@
 
                     <InputText type="password" class="form-control MyLeftFont " placeholder="@Localizer["Password"]"
                                aria-label="Username" aria-describedby="basic-addon2" @bind-Value="_model.Password" />
-                    <ValidationMessage For="@(()=>_model.Password)" />
+          
                     <span class="  MyRightFont LoginInputIcon"><i class="fa fa-key icon"></i></span>
 
                 </div>

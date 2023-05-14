@@ -42,11 +42,11 @@ public class AuthStateProvider : AuthenticationStateProvider
                         "jwtAuthType")));
             return auth;
         }
-        catch (Exception e)
-        {
+        catch (InvalidOperationException)
+        { 
             //ToDo Find a better way
             //When UI is Not Loaded
-            return await Task.FromResult(_anonymous);
+              return await Task.FromResult(_anonymous);
         }
        
 
