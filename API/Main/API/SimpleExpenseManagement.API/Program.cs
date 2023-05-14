@@ -96,7 +96,7 @@ app.UseAuthorization();
 
 app.UseEndpoints(config =>
 {
-    config.MapControllers().AllowAnonymous();
+    config.MapControllers();
 
     //  config.MapControllers();
    // config.MapFallbackToFile("index.html");
