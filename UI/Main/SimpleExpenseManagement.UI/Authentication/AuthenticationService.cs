@@ -104,25 +104,9 @@ public class AuthenticationService : IAuthenticationService
         var authContent = await authResult.Content.ReadAsStringAsync();
         var msg = JsonConvert.DeserializeObject<ApiResult>(authContent);
         if (!authResult.IsSuccessStatusCode || !msg.IsSuccess)
-        {
-            //  Console.WriteLine(" با خطا"); 
-            //Console.WriteLine(msg.Message);
             return;
-            //var res = JsonConvert.DeserializeObject<Dictionary<string, string>>(msg.Message);
-            //  return new AuthenticatedUserModel() { IsSuccess = msg.IsSuccess, Error = res["Exception"] };
-        }
-        //var result = JsonSerializer.Deserialize<ApiResult<AuthenticatedUserModel>>(
-        //    authContent,
-        //    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        //await _localStorage.SetItemAsync("authToken", result.Data.access_token);
 
-        //((AuthStateProvider)_authenticationStateProvider).NotifyUserAuthentication(result.Data.access_token);
-        //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", result.Data.access_token);
-        //result.Data.IsSuccess = true;
-        //return result.Data;
-
-        /// Console.WriteLine(" بدون خطا" );
 
     }
 }

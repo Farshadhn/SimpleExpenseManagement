@@ -34,7 +34,7 @@ public class AuthStateProvider : AuthenticationStateProvider
             var token = await _localStorage.GetItemAsync<string>("authToken");
 
             if (string.IsNullOrWhiteSpace(token))
-                return _anonymous;
+                return await Task.FromResult(_anonymous);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var auth = new AuthenticationState(
                 new ClaimsPrincipal(
@@ -46,7 +46,7 @@ public class AuthStateProvider : AuthenticationStateProvider
         {
             //ToDo Find a better way
             //When UI is Not Loaded
-            return _anonymous;
+            return await Task.FromResult(_anonymous);
         }
        
 

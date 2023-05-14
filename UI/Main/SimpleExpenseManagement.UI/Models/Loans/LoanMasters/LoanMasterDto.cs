@@ -15,12 +15,17 @@ namespace SimpleExpenseManagement.UI.Models.Loans.LoanMasters
     {
         public string Title { get; set; }
         public int Count { get; set; }
-       
+
+        [Appearance(4,4,8)]
         public int InterestRate { get; set; }
      
         public string Definition { get; set; }
+
+
+        [Appearance(4, 9, 3)]
         public decimal Freeze { get; set; }
 
+        [Appearance(4, 4, 8)]
         [RelatedTo(nameof(OperationDto), "Definition")]
         [Hidden]
         public Guid? OperationId { get; set; }
