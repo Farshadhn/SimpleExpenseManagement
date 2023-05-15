@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Share.Models.Operations
+namespace SimpleExpenseManagement.Share.Models.Operations;
+
+public interface IOperationSelectDto : IEntity, IOperationDto
 {
-    public interface IOperationSelectDto : IEntity, IOperationDto
-    {
-    }
 }
