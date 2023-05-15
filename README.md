@@ -3,7 +3,7 @@
 # Develop a Dashboard in ✨ 5 minutes ✨
  Lookif framework is a lightweight multi-layered framework that enables you to create a dashboard in less than 5 minutes. 
  This repo is just a  sample about how to use these libraries. It is not focesd on UI Design or how to develop a greate automated dashboard.
- Although, Right now it is in Persian, I'll inject other languages.
+ Although, Right now it is in Persian, I'll implement other languages.
  
  
  
@@ -15,13 +15,13 @@
 
  
 ## Features
-- Using internal Automapper help you to map your models without defining any profilers. You can also create special profiler where ever you want
+- Using internal Automapper help you to map your models without defining any profilers. You can also create a special profiler where ever you want
 - It supports Auto Database Migration. You do not need to define Dbsets or any thing retlated to it.
-- Generic CRUD is supported in service and controll level.
-- By using Blazor and .Net, we can share our data models throughout your API and UI and even mobile phone.
+- Generic CRUD is supported in service and control level.
+- By using Blazor and .Net, we can share our data models throughout the API, UI and even mobile applications.
 - Identity is supported for authorization and authentication.
-- In blazor, By using reflection, any models can be translated to a simple form to insert new data. You can even Set its label or input size.
-- In blazor, By using reflection, any models can be translated to a simple grid to show inserted data. You can set column's size.
+- By using reflection in Blazor, any models can be translated to a simple form to insert new data. You can even Set its label or input size.
+- By using reflection in Blazor, any models can be translated to a simple grid to show inserted data. You can set column's size.
 - JTW Token is supported.
 
  
@@ -73,7 +73,7 @@ These are third party libraries we use.
 
 #### API
 
-#### 1.Create your Entity model ( If you want to use Temporal or history tables you just need to add derived from Itemporal interface)
+#### 1. Create your Entity model ( If you want to use Temporal or history tables you just need to add derived from Itemporal interface)
 ```
 public class Tag : BaseEntity<Guid>, IActive
 {
@@ -82,7 +82,7 @@ public class Tag : BaseEntity<Guid>, IActive
     public bool IsActive { get ; set ; }
 }
 ```
-#### 2.Create Empty IService ( By using IScopedDependency,ITransientDependency,ISingletonDependency, you define its DependencyInjection. you do not need to add .AddScope() anywhere)
+#### 2. Create Empty IService ( By using IScopedDependency, ITransientDependency, ISingletonDependency, you define its DependencyInjection. you do not need to add .AddScope() anywhere)
 ```
 public interface ITagService : IBaseService<Tag, Guid>, IScopedDependency
 {
@@ -90,7 +90,7 @@ public interface ITagService : IBaseService<Tag, Guid>, IScopedDependency
 }
 ```
 
-#### 3.Create Empty Service - Crud operations are implemented in BaseService
+#### 3. Create Empty Service - Crud operations are implemented in BaseService
 ```
 public class TagService : BaseService<Tag, Guid>, ITagService, IScopedDependency
 {
@@ -101,7 +101,7 @@ public class TagService : BaseService<Tag, Guid>, ITagService, IScopedDependency
     }
 }
 ```
-#### 4.Create Empty Controller - Crud operations are implemented in CrudController
+#### 4. Create Empty Controller - Crud operations are implemented in CrudController
 
 ```
 [ApiVersion("1")]
@@ -115,7 +115,7 @@ public class TagController : CrudController<TagDto, TagSelectDto, Tag, ITagServi
 
 }
 ```
-#### 5.Define TagDto,TagSelectDto.
+#### 5. Define TagDto,TagSelectDto.
 TagDto is a DTO related to Post a new Tag.
 TagSelectDto is a DTO related to Get Tags.
 ```
@@ -131,14 +131,14 @@ public class TagSelectDto : BaseDto<TagSelectDto, Tag, Guid>, ITagSelectDto
     public bool IsActive { get; set; }
 }
 ```
-#### 6.There is no other steps in API.
+#### 6. There is no other steps in API.
  
  
  
  
  # UI
 
-#### 1.Create your Model in shared layer
+#### 1. Create your Model in shared layer
 ```
 public interface ITagDto : IEntity, IActive
 {
@@ -151,7 +151,7 @@ public interface ITagSelectDto : IEntity , ITagDto
 }
 
 ```
-#### 2.Create Dto in UI 
+#### 2. Create Dto in UI 
 ```
 public class TagDto : BaseDto, ITagDto
 {
@@ -169,7 +169,7 @@ public class TagSelectDto :  TagDto , ITagSelectDto
 }
 ```
 
-#### 3.Create your page using One line
+#### 3. Create your page using One line
 ```
 <CrudComponent  TItem="TagDto" TSelectItem="TagSelectDto"  Resource="Localizer" FormName="Tag" ></CrudComponent>
 
