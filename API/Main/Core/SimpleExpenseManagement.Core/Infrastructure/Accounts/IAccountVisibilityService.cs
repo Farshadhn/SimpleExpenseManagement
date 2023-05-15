@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Core.Infrastructure.Accounts
+namespace SimpleExpenseManagement.Core.Infrastructure.Accounts;
+
+public interface IAccountVisibilityService : IBaseService<AccountVisibility, Guid>, IScopedDependency
 {
-    public interface IAccountVisibilityService : IBaseService<AccountVisibility, Guid>, IScopedDependency
-    {
-    }
 }

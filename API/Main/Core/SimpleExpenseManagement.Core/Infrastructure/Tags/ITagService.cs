@@ -5,6 +5,6 @@ namespace SimpleExpenseManagement.Core.Infrastructure.Tags
 {
     public interface ITagService : IBaseService<Tag, Guid>, IScopedDependency
     {
-        Task<Tag> AddTag(Tag tg, List<Guid> Operationlist, CancellationToken cancellationToken);
+        
     }
 }

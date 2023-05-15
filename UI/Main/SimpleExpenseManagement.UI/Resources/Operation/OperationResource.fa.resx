@@ -129,16 +129,28 @@
   <data name="FromId" xml:space="preserve">
     <value>از اکانت</value>
   </data>
+  <data name="FromTitle" xml:space="preserve">
+    <value>از حساب</value>
+  </data>
   <data name="IsActive" xml:space="preserve">
     <value>فعال است؟</value>
   </data>
-  <data name="TagList" xml:space="preserve">
-    <value>Tag List</value>
+  <data name="Operation" xml:space="preserve">
+    <value>تراکنش</value>
+  </data>
+  <data name="TagId" xml:space="preserve">
+    <value>برچسب</value>
+  </data>
+  <data name="TagTitle" xml:space="preserve">
+    <value>برچسب</value>
   </data>
   <data name="ToId" xml:space="preserve">
     <value>به اکانت</value>
   </data>
+  <data name="ToTitle" xml:space="preserve">
+    <value>به حساب</value>
+  </data>
   <data name="TypeOfOperation" xml:space="preserve">
-    <value>Type Of Operation</value>
+    <value>نوع عملیت</value>
   </data>
 </root>

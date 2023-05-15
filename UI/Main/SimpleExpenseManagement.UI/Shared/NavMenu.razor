@@ -13,7 +13,7 @@
 
     <div class="SidebarUsername">
         <a href="" target="_blank">
-            <span>داشبورد فرشاد</span>
+            <span>داشبورد</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -40,16 +40,11 @@
     public List<(string address, string image)> listOfMainMenues =
     new List<(string address, string image)> {
         ("Home","fa fa-home"),
-        ("Event","fa fa-calendar-alt"),
-        ("Investment","fa fa-piggy-bank"),
-        ("LoanMaster","fa fa-money-check-alt"),
-        ("LoanDetail","fa fa-money-check-alt"),
         ("Unit","fa fa-dollar-sign"),
         ("Tag","fa fa-tags"),
         ("Operation","fa fa-credit-card"),
         ("Account","fa fa-file-invoice-dollar"),
-        ("AccountVisibility","fa fa-eye-slash"),
-        ("User","fa fa-user")
+        ("AccountVisibility","fa fa-eye-slash") 
     };
 
     public async Task Navigate(string MenuName)

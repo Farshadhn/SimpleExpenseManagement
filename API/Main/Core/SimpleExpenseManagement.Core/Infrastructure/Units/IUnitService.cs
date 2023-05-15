@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Core.Infrastructure.Units
+namespace SimpleExpenseManagement.Core.Infrastructure.Units;
+
+public interface IUnitService : IBaseService<Unit, Guid>, IScopedDependency
 {
-    public interface IUnitService : IBaseService<Unit, Guid>, IScopedDependency
-    {
-    }
 }

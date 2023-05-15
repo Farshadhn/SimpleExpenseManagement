@@ -28,7 +28,12 @@ namespace SimpleExpenseManagement.API.Controllers.v1.Accounts
             var res = await Service.GetAll().Where(x => x.LastEditedUserId == UserId).ProjectTo<AccountSelectDto>(_mapper.ConfigurationProvider)
            .ToListAsync(cancellationToken);
 
-            var operations = await _OperationService.GetAll().Where(x => x.UserId == UserId).Include(x => x.From).Include(x => x.To).Include(x => x.Tags).ThenInclude(xx => xx.Tag).ToListAsync(cancellationToken);
+            var operations = await _OperationService
+                .GetAll()
+                .Where(x => x.UserId == UserId)
+                .Include(x => x.From)
+                .Include(x => x.To)
+                .ToListAsync(cancellationToken);
 
 
             foreach (var item in res)

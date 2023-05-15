@@ -1,8 +1,7 @@
 using Blazorise;
 using Blazorise.Bootstrap;
 using SimpleExpenseManagement.UI;
-using SimpleExpenseManagement.UI.Authentication;
-using SimpleExpenseManagement.UI.Data;
+using SimpleExpenseManagement.UI.Authentication; 
 using Lookif.UI.Component.Extension;
 using Lookif.UI.Component.MiddleWares;
 using Lookif.UI.Component.Utility;

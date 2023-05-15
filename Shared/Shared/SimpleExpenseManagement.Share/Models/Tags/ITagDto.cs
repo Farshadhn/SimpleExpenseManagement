@@ -10,7 +10,6 @@ namespace SimpleExpenseManagement.Share.Models.Tags
     public interface ITagDto : IEntity, IActive
     {
         public string Title { get; set; }
-        public string Color { get; set; }
-        //public List<Guid> oprationList { get; set; }
+        public string Color { get; set; } 
     }
 }

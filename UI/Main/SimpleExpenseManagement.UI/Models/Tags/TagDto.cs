@@ -9,19 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.UI.Models.Tags
+namespace SimpleExpenseManagement.UI.Models.Tags;
+
+public class TagDto : BaseDto, ITagDto
 {
-    public class TagDto : BaseDto, ITagDto
-    {
-        public string Title { get; set; }
-        public string Color { get; set; }
+    public string Title { get; set; }
+    public string Color { get; set; }
 
 
-        //[RelatedTo(nameof(OperationDto), "Definition")]
-        //public List<Guid> oprationList { get; set; }
-        [Hidden]
-        [HiddenDto(HiddenStatus.Create)]
-        public bool IsActive { get; set; }
+    //[RelatedTo(nameof(OperationDto), "Definition")]
+    //public List<Guid> oprationList { get; set; }
+    [Hidden]
+    [HiddenDto(HiddenStatus.Create)]
+    public bool IsActive { get; set; }
 
-    }
 }

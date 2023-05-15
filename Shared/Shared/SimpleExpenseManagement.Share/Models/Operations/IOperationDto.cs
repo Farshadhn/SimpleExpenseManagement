@@ -11,8 +11,7 @@ namespace SimpleExpenseManagement.Share.Models.Operations
         public decimal Amount { get; set; }
         public TypeOfOperation TypeOfOperation { get; set; }
         public string Definition { get; set; }
-        public Guid? EventId { get; set; }
-        public List<Guid> TagList { get; set; }
+        public Guid? TagId { get; set; }
         public Guid? UserId { get; set; }
 
     }

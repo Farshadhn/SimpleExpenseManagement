@@ -1,7 +1,6 @@
 ﻿using SimpleExpenseManagement.Constants.Enums;
 using SimpleExpenseManagement.Share.Models.Operations;
 using SimpleExpenseManagement.UI.Models.Accounts;
-using SimpleExpenseManagement.UI.Models.Events;
 using SimpleExpenseManagement.UI.Models.Tags;
 using Lookif.UI.Component.Attributes;
 
@@ -19,15 +18,16 @@ namespace SimpleExpenseManagement.UI.Models.Operations
         public decimal Amount { get; set; }
         public TypeOfOperation TypeOfOperation { get; set; }
         public string Definition { get; set; }
+
+
         [RelatedTo(nameof(TagDto), "Title")]
         [Hidden]
-        public List<Guid> TagList { get; set; }
-        [RelatedTo(nameof(EventDto), "EventTitle")]
-        [Hidden]
-        public Guid? EventId { get; set; }
+        public Guid? TagId { get; set; }
         [Hidden]
         [HiddenDto(HiddenStatus.Create)]
         public bool IsActive { get; set; }
+        [Hidden]
+        [HiddenDto(HiddenStatus.EditAndCreate)]
         public Guid? UserId { get; set; }
     }
 }
