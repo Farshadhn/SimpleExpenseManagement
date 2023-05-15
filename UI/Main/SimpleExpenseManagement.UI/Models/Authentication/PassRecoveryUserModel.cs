@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.UI.Models.Authentication
+namespace SimpleExpenseManagement.UI.Models.Authentication;
+
+public class PassRecoveryUserModel
 {
-	public class PassRecoveryUserModel
-	{
-		[Required(ErrorMessage = "No UserName")]
-		public string UserName { get; set; }
+	[Required(ErrorMessage = "No UserName")]
+	public string UserName { get; set; }
 
-		[Required(ErrorMessage = "No Email")]
-		public string Email { get; set; }
+	[Required(ErrorMessage = "No Email")]
+	public string Email { get; set; }
 
-	}
 }

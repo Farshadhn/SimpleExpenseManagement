@@ -17,11 +17,9 @@ namespace SimpleExpenseManagement.API.Models.Operations
         public TypeOfOperation TypeOfOperation { get; set; }
         public string Definition { get; set; }
         public bool IsActive { get; set; }
-
-        public string tags { get; set; }
-
-        public List<Guid> TagList { get; set; }
-        public Guid? EventId { get ; set ; }
+         
+        public string TagTitle { get; set; }
+        public Guid? TagId { get; set; }
         public Guid? UserId { get; set; }
     }
 }

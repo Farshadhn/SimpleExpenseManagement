@@ -2,11 +2,10 @@
 using SimpleExpenseManagement.Share.Models.Units;
 using Lookif.Layers.WebFramework.Api;
 
-namespace SimpleExpenseManagement.API.Models.Units
+namespace SimpleExpenseManagement.API.Models.Units;
+
+public class UnitSelectDto : BaseDto<UnitSelectDto, Unit, Guid>, IUnitSelectDto
 {
-    public class UnitSelectDto : BaseDto<UnitSelectDto, Unit, Guid>, IUnitSelectDto
-    {
-        public string Title { get; set; }
-        public bool IsActive { get; set; }
-    }
+    public string Title { get; set; }
+    public bool IsActive { get; set; }
 }

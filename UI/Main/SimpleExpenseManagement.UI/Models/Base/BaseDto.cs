@@ -1,8 +1,8 @@
-﻿using SimpleExpenseManagement.UI.Models.Events;
-using Lookif.Layers.Core.MainCore.Base;
+﻿using Lookif.Layers.Core.MainCore.Base;
 using Lookif.Layers.Core.MainCore.Identities;
 using Lookif.UI.Component.Attributes;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SimpleExpenseManagement.UI.Models.Base;
 
@@ -10,7 +10,7 @@ public class BaseDto<TEntity> : IEntity<TEntity>
 {
     [Hidden]
     [HiddenDto]
-    [key]
+    [Key]
     public TEntity Id { get; set; }
 
     [Hidden]

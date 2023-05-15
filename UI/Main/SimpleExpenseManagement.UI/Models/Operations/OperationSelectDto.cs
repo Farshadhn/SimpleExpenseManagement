@@ -6,6 +6,6 @@ namespace SimpleExpenseManagement.UI.Models.Operations
     {
         public string FromTitle { get; set; }
         public string ToTitle { get; set; }
-        public string tags { get; set; }
+        public string TagTitle { get; set; }
     }
 }

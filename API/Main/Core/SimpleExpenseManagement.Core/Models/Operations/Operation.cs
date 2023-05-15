@@ -1,11 +1,8 @@
 ﻿using SimpleExpenseManagement.Constants.Enums;
 using SimpleExpenseManagement.Core.Models.Accounts;
-using SimpleExpenseManagement.Core.Models.Events;
 using SimpleExpenseManagement.Core.Models.Tags;
-using Lookif.Layers.Core.MainCore.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleExpenseManagement.Core.Models.Operations;
 
@@ -22,10 +19,12 @@ public class Operation : BaseEntity<Guid>, IActive
     public decimal Amount { get; set; }
     public TypeOfOperation TypeOfOperation{ get; set; }
     public string Definition { get; set; }
-    public Event? Event{ get; set; }
-    [ForeignKey(nameof(EventId))]
-    public Guid? EventId { get; set; }
-    public virtual ICollection<Operation_Tag> Tags { get; set; }
+
+
+    public Tag Tag { get; set; }
+    [ForeignKey(nameof(TagId))]
+    public Guid? TagId { get; set; }
+     
     public bool IsActive { get; set ; }
 
 

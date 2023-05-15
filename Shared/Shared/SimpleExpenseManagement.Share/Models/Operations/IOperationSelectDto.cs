@@ -9,6 +9,5 @@ namespace SimpleExpenseManagement.Share.Models.Operations
 {
     public interface IOperationSelectDto : IEntity, IOperationDto
     {
-        public string tags { get; set; }
     }
 }
