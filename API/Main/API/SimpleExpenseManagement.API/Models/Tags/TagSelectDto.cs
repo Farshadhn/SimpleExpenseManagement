@@ -8,6 +8,5 @@ public class TagSelectDto : BaseDto<TagSelectDto, Tag, Guid>, ITagSelectDto
 {
     public string Title { get; set; }
     public string Color { get; set; }
-    public bool IsActive { get; set; }
-    public List<Guid> oprationList { get ; set; }
+    public bool IsActive { get; set; } 
 }
