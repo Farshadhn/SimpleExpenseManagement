@@ -1,0 +1,106 @@
+﻿@typeparam T
+@namespace Lookif.UI.Component.DropDown
+@using Microsoft.Extensions.Localization;
+@using Lookif.UI.Component.Resources
+@inject IStringLocalizer<Resource> basicResource
+@{
+    var relatedSource = ((IStringLocalizer)basicResource)?.GetAllStrings()?.ToList();
+
+}
+
+
+@{
+    var id = Guid.NewGuid();
+
+}
+@if (SanitizedRecords == null)
+{
+    <p>
+        <em>لیستی موجود نیست</em>
+    </p>
+}
+else
+{
+    @code {
+    bool show = false;
+    private void ShowOptions()
+    {
+        show = !show;
+    }
+
+
+    }
+    if (Multiple)
+    {
+
+        <div class="multiselect">
+            <div class="selectBox LH" @onclick="ShowOptions">
+                <select>
+                    <option>@relatedSource.FirstOrDefault(x=>x.Name == "Select").Value</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+
+            <div id="checkboxes" style='display:@((show)?"block":"none")'>
+                @foreach (var record in SanitizedRecords)
+                {
+
+                    <label>
+                        @{ 
+                            if (record.Status)
+                            {
+
+                                <input type="checkbox" checked @onclick="()=>ChangeList(record)" />
+
+                                @record.Content
+                            }
+                            else
+                            {
+                                <input type="checkbox" @onclick="()=>ChangeList(record)" />
+                                @record.Content
+                            }
+                        }
+                    </label>
+                }
+
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        if (Simple)
+        { 
+            <select 
+            @attributes="AdditionalAttributes"
+            style="width: inherit;height:inherit" @onchange="@(myrecordsChange)" >
+            <option style="width: 100%;" selected=@(Selected is null ? true : false)></option>
+            @foreach (var record in SanitizedRecords)
+                {
+                    <option style="width: 100%;" selected=@(Selected is null ? false : (Selected == record.Content)) >@record.Content</option>
+                }
+            </select>
+        }
+        else
+        {
+            <input class="custom-select custom-select-sm"
+               list="@id"
+               @onfocus="Clear"
+               name="@(Guid.NewGuid())"
+               value="@Selected"
+               @attributes="AdditionalAttributes"
+               @onchange="@(myrecordsChange)"
+               style="width: inherit;" />
+
+            <datalist style="width: 100%;" id="@id">
+                @foreach (var record in SanitizedRecords)
+                {
+                    <option style="width: 100%;">@record.Content</option>
+                }
+            </datalist>
+        }
+
+
+    }
+}

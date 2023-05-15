@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Share.Models.Units
+namespace SimpleExpenseManagement.Share.Models.Units;
+
+public interface IUnitDto : IEntity, IActive
 {
-    public interface IUnitDto : IEntity, IActive
-    {
-        public string Title { get; set; }
-    }
+    public string Title { get; set; }
 }

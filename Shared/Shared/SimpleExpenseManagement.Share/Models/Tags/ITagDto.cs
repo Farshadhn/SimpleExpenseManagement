@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Share.Models.Tags
+namespace SimpleExpenseManagement.Share.Models.Tags;
+
+public interface ITagDto : IEntity, IActive
 {
-    public interface ITagDto : IEntity, IActive
-    {
-        public string Title { get; set; }
-        public string Color { get; set; }
-        //public List<Guid> oprationList { get; set; }
-    }
+    public string Title { get; set; }
+    public string Color { get; set; } 
 }

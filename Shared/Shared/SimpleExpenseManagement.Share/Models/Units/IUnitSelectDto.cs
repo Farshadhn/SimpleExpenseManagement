@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Share.Models.Units
+namespace SimpleExpenseManagement.Share.Models.Units;
+
+public interface IUnitSelectDto : IEntity , IUnitDto
 {
-    public interface IUnitSelectDto : IEntity , IUnitDto
-    {
-    }
 }

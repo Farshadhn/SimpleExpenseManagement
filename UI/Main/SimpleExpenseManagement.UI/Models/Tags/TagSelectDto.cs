@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.UI.Models.Tags
+namespace SimpleExpenseManagement.UI.Models.Tags;
+
+public class TagSelectDto :  TagDto , ITagSelectDto
 {
-    public class TagSelectDto :  TagDto , ITagSelectDto
-    {
-    }
 }

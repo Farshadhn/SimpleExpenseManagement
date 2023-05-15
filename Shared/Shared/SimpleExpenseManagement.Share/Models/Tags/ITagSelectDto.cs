@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Share.Models.Tags
+namespace SimpleExpenseManagement.Share.Models.Tags;
+
+public interface ITagSelectDto : IEntity , ITagDto
 {
-    public interface ITagSelectDto : IEntity , ITagDto
-    {
-    }
 }

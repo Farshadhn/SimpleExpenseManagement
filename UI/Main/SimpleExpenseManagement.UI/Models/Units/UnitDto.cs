@@ -8,16 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.UI.Models.Units
-{
-    public class UnitDto : BaseDto, IUnitDto
-    {
-        [Display(Name = "Quantity Required")]
-        public string Title { get; set; }
-        [Hidden]
-        [HiddenDto(HiddenStatus.Create)]
-        public bool IsActive { get; set; }
+namespace SimpleExpenseManagement.UI.Models.Units;
 
- 
-    }
+public class UnitDto : BaseDto, IUnitDto
+{
+    [Display(Name = "Quantity Required")]
+    public string Title { get; set; }
+    [Hidden]
+    [HiddenDto(HiddenStatus.Create)]
+    public bool IsActive { get; set; }
+
+
 }

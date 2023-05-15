@@ -4,16 +4,15 @@ using Lookif.Layers.Core.Infrastructure.Base;
 using Lookif.Layers.Core.Infrastructure.Base.Repositories;
 using Lookif.Layers.Service.Services.Base;
 
-namespace SimpleExpenseManagement.Service.Services.Accounts
+namespace SimpleExpenseManagement.Service.Services.Accounts;
+
+public class AccountVisibilityService : BaseService<AccountVisibility, Guid>, IAccountVisibilityService, IScopedDependency
 {
-    public class AccountVisibilityService : BaseService<AccountVisibility, Guid>, IAccountVisibilityService, IScopedDependency
+    private readonly IRepository<AccountVisibility> _repository;
+
+    public AccountVisibilityService(IRepository<AccountVisibility> repository) : base(repository)
     {
-        private readonly IRepository<AccountVisibility> _repository;
-
-        public AccountVisibilityService(IRepository<AccountVisibility> repository) : base(repository)
-        {
-            _repository = repository;
-        }
-
+        _repository = repository;
     }
+
 }

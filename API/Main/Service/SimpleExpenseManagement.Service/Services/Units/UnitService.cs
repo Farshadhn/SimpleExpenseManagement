@@ -9,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.Service.Services.Units
-{
-    public class UnitService : BaseService<Unit, Guid>, IUnitService, IScopedDependency
-    {
-        private readonly IRepository<Unit> _repository;
+namespace SimpleExpenseManagement.Service.Services.Units;
 
-        public UnitService(IRepository<Unit> repository) : base(repository)
-        {
-            _repository = repository;
-        }
+public class UnitService : BaseService<Unit, Guid>, IUnitService, IScopedDependency
+{
+    private readonly IRepository<Unit> _repository;
+
+    public UnitService(IRepository<Unit> repository) : base(repository)
+    {
+        _repository = repository;
     }
 }

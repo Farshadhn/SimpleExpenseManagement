@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleExpenseManagement.UI.Models.Units
+namespace SimpleExpenseManagement.UI.Models.Units;
+
+public class UnitSelectDto :  UnitDto , IUnitSelectDto
 {
-    public class UnitSelectDto :  UnitDto , IUnitSelectDto
-    {
-    }
 }
